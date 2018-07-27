@@ -1,0 +1,2 @@
+class QuantumRegisterException(Exception):
+    pass
