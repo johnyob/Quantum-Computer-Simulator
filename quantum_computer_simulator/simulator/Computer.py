@@ -34,7 +34,7 @@ class Computer:
 
             print(probabilities)
 
-            self._measured_value = "|phi> = |{0}>".format("".join(map(str, decimal_to_binary(
+            self._measured_value = "|psi> = |{0}>".format("".join(map(str, decimal_to_binary(
                 self._qubits,
                 np.random.choice(
                     range(len(probabilities)),
