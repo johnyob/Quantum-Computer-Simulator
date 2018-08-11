@@ -11,7 +11,7 @@ This a simple Python package for a multi-qubit quantum computer simulator. This 
 - [x] Pauli-Z gate
 - [X] Hadamard gate
 - [x] Phase shift gate
-- [x] Square root of NOT gate 
+- [x] Square root of NOT gate
 - [x] CNOT gate
 - [x] Quantum measurement
 
@@ -37,7 +37,7 @@ print(five_qubit_computer.measure())
 Printing:
 
 ```python
-"|phi> = |00000>"
+"|psi> = |00000>"
 ```
 
 ### Quantum measurement / observation
@@ -54,8 +54,8 @@ print(four_qubit_register.measure())
 Printing:
 
 ```python
-"|phi> = |00>"
-"|phi> = |0000>"
+"|psi> = |00>"
+"|psi> = |0000>"
 ```
 
 After the register has been measured / observed, it can no-longer have any gates applied to it. Otherwise a `QuantumRegisterException` is raised, for example:
@@ -72,22 +72,22 @@ one_qubit_computer.H(1)
 Printing:
 
 ```python
-"|phi> = |0>"
+"|psi> = |0>"
 "quantum_computer_simulator.helpers.Exceptions.QuantumRegisterException: {'message': 'cannot apply a gate to a measured quantum register'}"
 ```
 
 ### Single qubit gates
 
-This quantum computer simulator support 6 commonly used single qubit gates: 
+This quantum computer simulator support 6 commonly used single qubit gates:
 
 - Pauli-X gate
 - Pauli-Y gate
 - Pauli-Z gate
 - Hadamard gate
 - Phase shift gate
-- Square root of NOT gate 
+- Square root of NOT gate
 
-However, more single qubit gates can be implemented by creating subclasses of the `SingleQubitGate` class. 
+However, more single qubit gates can be implemented by creating subclasses of the `SingleQubitGate` class.
 
 The `Computer` interface provides methods for all six of these gates:
 
@@ -98,7 +98,7 @@ The `Computer` interface provides methods for all six of these gates:
 - `R(qubit, phi)`, where phi is the phase shift (in radians)
 - `SqrtNOT(qubit)`
 
-`qubit` is an index reference to the qubit that the gate will be applied too. Therefore `qubit` must be in the range of `1 <= qubit <= n`, where n is the number of qubits that are being simulated. 
+`qubit` is an index reference to the qubit that the gate will be applied too. Therefore `qubit` must be in the range of `1 <= qubit <= n`, where n is the number of qubits that are being simulated.
 
 Examples:
 
@@ -107,7 +107,7 @@ Examples:
 from quantum_computer_simulator import Computer
 
 two_qubit_computer = Computer(2)
-#Initial state of |phi> = |00>
+#Initial state of |psi> = |00>
 
 two_qubit_computer.X(1)
 
@@ -117,7 +117,7 @@ print(two_qubit_computer.measure())
 Printing:
 
 ```python
-"|phi> = |10>"
+"|psi> = |10>"
 ```
 
 #### Pauli-Y gate
@@ -125,7 +125,7 @@ Printing:
 from quantum_computer_simulator import Computer
 
 three_qubit_computer = Computer(3)
-#Initial state of |phi> = |000>
+#Initial state of |psi> = |000>
 
 three_qubit_computer.Y(2)
 
@@ -135,7 +135,7 @@ print(three_qubit_computer.measure())
 Printing:
 
 ```python
-"|phi> = |010>"
+"|psi> = |010>"
 ```
 
 #### Pauli-Z gate
@@ -143,7 +143,7 @@ Printing:
 from quantum_computer_simulator import Computer
 
 one_qubit_computer = Computer(1)
-#Initial state of |phi> = |0>
+#Initial state of |psi> = |0>
 
 one_qubit_computer.Z(1)
 
@@ -153,7 +153,7 @@ print(one_qubit_computer.measure())
 Printing:
 
 ```python
-"|phi> = |0>"
+"|psi> = |0>"
 ```
 
 #### Hadamard Gate
@@ -161,7 +161,7 @@ Printing:
 from quantum_computer_simulator import Computer
 
 two_qubit_computer = Computer(2)
-#Initial state of |phi> = |00>
+#Initial state of |psi> = |00>
 
 two_qubit_computer.H(2)
 
@@ -170,12 +170,12 @@ print(two_qubit_computer.measure())
 Printing either:
 
 ```python
-"|phi> = |00>"
+"|psi> = |00>"
 ```
 
-or 
+or
 ```python
-"|phi> = |01>"
+"|psi> = |01>"
 ```
 
 #### Phase shift (R_phi) Gate
@@ -185,7 +185,7 @@ from numpy import pi
 from quantum_computer_simulator import Computer
 
 two_qubit_computer = Computer(2)
-#Initial state of |phi> = |00>
+#Initial state of |psi> = |00>
 
 two_qubit_computer.R(1, pi) #Pauli-Z gate when phi = pi
 
@@ -195,7 +195,7 @@ print(two_qubit_computer.measure())
 Printing:
 
 ```python
-"|phi> = |00>"
+"|psi> = |00>"
 ```
 
 #### Square root of NOT Gate
@@ -203,7 +203,7 @@ Printing:
 from quantum_computer_simulator import Computer
 
 five_qubit_computer = Computer(5)
-#Initial sate of |phi> = |00000>
+#Initial sate of |psi> = |00000>
 
 five_qubit_computer.SqrtNOT(4)
 
@@ -213,12 +213,12 @@ print(five_qubit_computer.measure())
 Printing either:
 
 ```python
-"|phi> = |00000>"
+"|psi> = |00000>"
 ```
 
 or
 ```python
-"|phi> = |00010>"
+"|psi> = |00010>"
 ```
 
 ### Multi qubit gates
@@ -228,7 +228,7 @@ Currently this quantum computer simulator only supports 1 multi-qubit gate; the 
 from quantum_computer_simulator import Computer
 
 three_qubit_simulator = Computer(3)
-#Initial state of |phi> = |000>
+#Initial state of |psi> = |000>
 
 three_qubit_simulator.X(1) #Set control qubit = 1
 three_qubit_simulator.CNOT(1, 3)
@@ -239,7 +239,7 @@ print(three_qubit_simulator.measure())
 Printing:
 
 ```python
-"|phi> = |101>"
+"|psi> = |101>"
 ```
 
 ## Errors
