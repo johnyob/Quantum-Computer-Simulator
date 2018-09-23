@@ -19,7 +19,6 @@ class SingleQubitGate:
     def generate_gate_matrix(self, q, n):
         """
         Produces the logic gate matrix of size 2^n by 2^n, where n is the number of qubits being simulated.
-        https://cs.stackexchange.com/questions/48834/applying-a-multi-qubit-quantum-gate-to-specific-qubits
 
         :param q: index of the qubit that the gate is being applied too (integer)
         :param n: number of qubits being simulated (integer)
