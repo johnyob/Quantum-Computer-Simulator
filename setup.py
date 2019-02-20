@@ -15,7 +15,7 @@ setuptools.setup(
     name="quantum-computer-simulator",
     version="0.0.1",
     author="Alistair O'Brien",
-    author_email="alistair.o'brien@ellesmere.com",
+    author_email="alistair@duneroot.co.uk",
     description="A Quantum Computer Simulator written in Python.",
     long_description=long_description,
     long_description_content_type="text/markdown",
